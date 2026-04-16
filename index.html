@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Проценты с изображениями и отступами</title>
+    <title>Пример про единицы измерения rlh</title>
     <link
       rel="stylesheet"
       href="https://code.s3.yandex.net/web-code/fonts/fonts.css"
@@ -11,20 +11,52 @@
     <link rel="stylesheet" href="./styles/style.css" />
   </head>
   <body>
-    <article class="article">
+    <header class="header">
       <img
-        class="article__image"
-        src="./images/who.jpg"
-        atl="Портрет Питера Капальди в роли Доктора Кто"
+        src="./svg/verstka-logo-black.svg"
+        class="header__logo"
+        alt="logo verstka"
       />
-      <blockquote class="quote">
-        <h2 class="quote__title">Цитата дня</h2>
-        <p class="quote__text">
-          Иногда у вас есть только один плохой выбор, но вам всё равно придется
-          выбирать.
-        </p>
-        <cite class="quote__author">Доктор Кто</cite>
-      </blockquote>
-    </article>
+      <h2 class="header__slogan slogan-text">
+        Учим верстать стильно модно молодёжно
+      </h2>
+      <nav>
+        <ul class="header__list small-text">
+          <li><a href="#" class="header__link">Хочу верстать!</a></li>
+          <li><a href="#" class="header__link">Я просто смотрю</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <h1 class="title">Ученье — свет</h1>
+      <div class="main-content">
+        <figure>
+          <img src="./images/two.png" alt="изображение" />
+          <figcaption class="small-text">Школьные годы чудесные</figcaption>
+        </figure>
+        <div class="main-content__wrapper">
+          <p class="text">В школе нас учат решать задачи по образцу.</p>
+          <p class="text">
+            Вёрстка же учит мыслить вне шаблонов. Ломай сетку и четвёртую стену,
+            мочи манту, кради как художник!
+          </p>
+        </div>
+      </div>
+    </main>
+    <aside class="aside">
+      <p class="aside__text small-text">А голову ты дома не забыл?</p>
+      <p class="aside__text small-text">Выйди и зайди как надо!</p>
+      <p class="aside__text small-text">Закрыли рты, открыли учебники.</p>
+      <p class="aside__text small-text">Лес рук!</p>
+      <p class="aside__text small-text">Звонок для учителя.</p>
+    </aside>
+    <footer class="footer">
+      <p class="footer__copyright slogan-text">VЁRSTKA</p>
+      <ul class="footer__social small-text">
+        <li><a href="#" class="footer__link">Картинкограм</a></li>
+        <li><a href="#" class="footer__link">Лицокнига</a></li>
+        <li><a href="#" class="footer__link">Бывший Чикчирик</a></li>
+      </ul>
+    </footer>
   </body>
 </html>

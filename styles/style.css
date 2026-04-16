@@ -1,62 +1,151 @@
 html {
   block-size: 100%;
+  font-size: 16px;
 }
 
 body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: grid;
+  grid-template-columns: 30% 1fr 1fr 1fr;
+  grid-template-rows: repeat(3, auto);
+  grid-template-areas:
+    '. header header header'
+    '. main main aside'
+    'footer footer footer .';
   min-inline-size: 360px;
   min-block-size: 100%;
   margin: 0;
-  color: #fff;
   font-family: 'Open Sans', sans-serif;
-  background-image: url(https://code.s3.yandex.net/web-code/images/dotted-l.svg);
 }
 
 h1,
 h2,
-h3,
-p {
+p,
+figure {
+  margin: 0;
+}
+
+.header__logo {
+  max-inline-size: 160px;
+}
+
+.main-content img {
+  inline-size: 100%;
+  border: 1px solid #000;
+}
+
+.header {
+  grid-area: header;
+}
+
+.footer {
+  grid-area: footer;
+}
+
+.aside {
+  grid-area: aside;
+}
+
+main {
+  grid-area: main;
+}
+
+figure {
+  position: absolute;
+  top: 0;
+  left: 0;
+  inline-size: 30%;
+}
+
+header,
+main,
+aside,
+footer {
+  border: 1px solid #000;
+  padding: 1rlh;
+  color: #000;
+  background-color: rgb(128 217 148 / 0.5);
+}
+
+header {
+  border-bottom: none;
+}
+
+aside {
+  border-left: none;
+}
+
+header,
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  border: none;
+  background-color: rgb(95 13 238 / 0.5);
+}
+
+ul {
+  display: flex;
+  gap: 2rem;
   margin: 0;
   padding: 0;
+  font-size: 1rem;
+  list-style: none;
 }
 
-.article {
-  inline-size: 60%;
-  margin: auto;
-  padding: 2em;
-  background-color: #5f0dee;
+.header__list {
+  flex-direction: column;
+  gap: 0;
 }
 
-.article__image {
-  inline-size: 260px;
-  border-radius: 0;
+.header__list a {
+  color: #000;
+  font-weight: 600;
 }
 
-.quote {
-  margin: 0;
+.main-content {
+  display: flex;
+  gap: 2rem;
 }
 
-.quote__title {
-  margin-block-end: 20px;
-  font-size: 32px;
-  line-height: 48px;
+.small-text {
+  font-size: 12px;
 }
 
-.quote__text {
-  margin-block-end: 8px;
+.slogan-text {
+  font-weight: 600;
   font-size: 20px;
-  line-height: 30px;
 }
 
-.quote__author {
-  font-size: 14px;
-  line-height: 21px;
+.title {
+  margin: 0 0 1.5rem;
+  font-size: 32px;
+  line-height: 1.2;
+}
+
+.text {
+  margin-block-end: 1rem;
+  font-size: 24px;
+}
+
+.text:last-child {
+  margin-block-end: 0;
 }
 
 @media (width <= 768px) {
-  .article {
-    inline-size: 100%;
+  html {
+    font-size: 12px;
+  }
+
+  header {
+    flex-direction: column;
+  }
+
+  .footer__social {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .header__logo {
+    max-inline-size: 100px;
   }
 }

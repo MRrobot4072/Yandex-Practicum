@@ -5,44 +5,62 @@
 }
 
 body {
+  display: grid;
+  place-items: center;
+  gap: 2em;
   min-block-size: 100dvb;
   margin: 0;
-  padding: 2em;
-  font-family: 'Open Sans', sans-serif;
-  font-size: 18px;
+  font-family: var(--main-font-family), sans-serif;
+  font-size: var(--main-text-size, 18px);
   background-color: #fff;
-  background-image: url(https://code.s3.yandex.net/web-code/images/dotted.svg);
+  background-image: var(--bg-pattern);
 }
 
-h1,
-h2,
-p,
-ul {
-  margin: 0;
-}
+.filter-form {
+  display: grid;
 
-.cards-list {
-  padding: 0;
-  list-style: none;
-}
-
-.card {
-  display: flex;
-  flex-wrap: wrap;
+  /* Здесь нужны стили для оформления колонок */
+  gap: 0.5em;
+  inline-size: 95%;
   border: 1px solid #000;
-  background-color: #fff;
+  padding: 1em;
+  background-color: #80d994;
 }
 
-.card__image {
-  inline-size: 150px;
+.visually-hidden {
+  position: absolute;
+  inline-size: 1px;
+  block-size: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
 }
 
-.card__description {
-  padding: 1.5em;
+.checkbox {
+  display: block;
+  cursor: pointer;
 }
 
-.card__title {
-  margin-block-end: 0.2em;
-  font-size: 2em;
+.checkbox__hashtag {
+  display: block;
+  border: 1px solid var(--black);
+  padding: 10px 65px;
+  opacity: 0.6;
+  color: var(--black);
+  font-family: inherit;
+  font-weight: 800;
+  font-size: inherit;
+  text-align: center;
   text-transform: uppercase;
+  background-color: var(--yellow);
+}
+
+.checkbox__input:checked + .checkbox__hashtag {
+  opacity: 1;
+}
+
+.checkbox__input:focus-visible + .checkbox__hashtag {
+  outline: 1px solid var(--black);
 }

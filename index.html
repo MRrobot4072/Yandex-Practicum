@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Проценты для адаптива</title>
+    <title>Адаптивный лэйаут без @media</title>
     <link
       rel="stylesheet"
       href="https://code.s3.yandex.net/web-code/fonts/fonts.css"
@@ -11,27 +11,20 @@
     <link rel="stylesheet" href="./styles/style.css" />
   </head>
   <body>
-    <article class="article">
-      <h2 class="article__title">Послушайте!</h2>
-      <p class="article__text">
-        Послушайте!<br />
-        Ведь, если звезды зажигают —<br />
-        значит — это кому-нибудь нужно?<br />
-        Значит — кто-то хочет, чтобы они были?
-      </p>
-    </article>
-    <article class="author-card">
-      <img
-        src="./images/portrait.jpg"
-        alt="Маяковский"
-        class="author-card__image"
-      />
-      <p class="author-card__text">
-        Владимир Владимирович Маяковский (07.07.93 — 14.04.30) — русский и
-        советский поэт, драматург, киносценарист, кинорежиссёр, киноактёр,
-        художник. Один из наиболее значимых русских поэтов XX века, классик
-        советской литературы.
-      </p>
-    </article>
+    <ul class="cards-list">
+      <li class="cards-list__item">
+        <article class="card">
+          <img
+            src="./images/egor.jpg"
+            alt="Фото Егора Летова, смотрящего на солнце в тёмных очках"
+            class="card__image"
+          />
+          <div class="card__description">
+            <h2 class="card__title">Егор Летов</h2>
+            <p class="card__paragraph">Он увидел солнце</p>
+          </div>
+        </article>
+      </li>
+    </ul>
   </body>
 </html>

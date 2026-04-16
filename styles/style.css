@@ -1,81 +1,48 @@
-html {
-  block-size: 100%;
-  font-size: 60%;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
 body {
-  display: flex;
-  gap: 3rem;
-  min-inline-size: 360px;
-  min-block-size: 100%;
+  min-block-size: 100dvb;
   margin: 0;
-  padding: 2rem;
-  color: #fff;
+  padding: 2em;
   font-family: 'Open Sans', sans-serif;
-  background-image: url(../images/bg.jpg);
+  font-size: 18px;
+  background-color: #fff;
+  background-image: url(https://code.s3.yandex.net/web-code/images/dotted.svg);
 }
 
 h1,
 h2,
-h3,
-p {
+p,
+ul {
   margin: 0;
+}
+
+.cards-list {
   padding: 0;
+  list-style: none;
 }
 
-.article {
-  inline-size: 60%;
-  margin: auto;
-  padding: 2em;
-  background-color: #5f0dee;
-}
-
-.article__title {
-  margin-block-end: 20px;
-  font-size: 2em;
-}
-
-.article__text {
-  font-size: 1.2em;
-}
-
-.author-card {
+.card {
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
-  gap: 20px;
-  max-inline-size: 40%;
-  margin: auto;
-  padding: 20px;
-  color: #333;
-  background-color: #6dc1fd;
+  border: 1px solid #000;
+  background-color: #fff;
 }
 
-.author-card__image {
-  inline-size: 200px;
-  block-size: 220px;
-  border-radius: 50%;
-  object-fit: cover;
-  object-position: center;
+.card__image {
+  inline-size: 150px;
 }
 
-.author-card__text {
-  font-size: 1em;
+.card__description {
+  padding: 1.5em;
 }
 
-.author-card__title {
-  margin-block-end: 31px;
-  font-size: 31px;
+.card__title {
+  margin-block-end: 0.2em;
+  font-size: 2em;
   text-transform: uppercase;
-}
-
-@media (width <= 768px) {
-  html {
-
-  }
-
-  .author-card__image {
-    inline-size: 50%;
-    block-size: 50%;
-  }
 }

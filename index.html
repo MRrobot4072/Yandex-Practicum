@@ -8,23 +8,47 @@
       rel="stylesheet"
       href="https://code.s3.yandex.net/web-code/fonts/fonts.css"
     />
+    <link rel="stylesheet" href="./styles/variables.css" />
     <link rel="stylesheet" href="./styles/style.css" />
   </head>
   <body>
-    <ul class="cards-list">
-      <li class="cards-list__item">
-        <article class="card">
-          <img
-            src="./images/egor.jpg"
-            alt="Фото Егора Летова, смотрящего на солнце в тёмных очках"
-            class="card__image"
-          />
-          <div class="card__description">
-            <h2 class="card__title">Егор Летов</h2>
-            <p class="card__paragraph">Он увидел солнце</p>
-          </div>
-        </article>
-      </li>
-    </ul>
+    <form class="filter-form">
+      <label class="checkbox">
+        <input
+          type="checkbox"
+          checked
+          class="checkbox__input visually-hidden"
+          value="lifestyle"
+        />
+        <span class="checkbox__hashtag">#лайфстайл</span>
+      </label>
+      <label class="checkbox">
+        <input
+          type="checkbox"
+          checked
+          class="checkbox__input visually-hidden"
+          value="news"
+        />
+        <span class="checkbox__hashtag">#новости</span>
+      </label>
+      <label class="checkbox">
+        <input
+          type="checkbox"
+          checked
+          class="checkbox__input visually-hidden"
+          value="tech"
+        />
+        <span class="checkbox__hashtag">#технологии</span>
+      </label>
+      <label class="checkbox">
+        <input
+          type="checkbox"
+          checked
+          class="checkbox__input visually-hidden"
+          value="science"
+        />
+        <span class="checkbox__hashtag">#наука</span>
+      </label>
+    </form>
   </body>
 </html>

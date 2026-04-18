@@ -81,3 +81,13 @@ ul {
   font-size: 1.5em;
   text-transform: uppercase;
 }
+
+@media (width <= 768px) {
+  .content {
+    grid-template-columns: 1fr;
+  }
+
+  .recommendations {
+    grid-column: 1;
+  }
+}

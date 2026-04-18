@@ -1,54 +1,85 @@
 <!DOCTYPE html>
 <html lang="ru">
   <head>
+    <meta
+      name="viewport"
+      content="user-scalable=no,initial-scale=1,maximum-scale=1,minimum-scale=1,width=device-width"
+    />
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Адаптивный лэйаут без @media</title>
+    <title>Взаимодействие</title>
     <link
       rel="stylesheet"
       href="https://code.s3.yandex.net/web-code/fonts/fonts.css"
     />
-    <link rel="stylesheet" href="./styles/variables.css" />
     <link rel="stylesheet" href="./styles/style.css" />
   </head>
   <body>
-    <form class="filter-form">
-      <label class="checkbox">
-        <input
-          type="checkbox"
-          checked
-          class="checkbox__input visually-hidden"
-          value="lifestyle"
-        />
-        <span class="checkbox__hashtag">#лайфстайл</span>
-      </label>
-      <label class="checkbox">
-        <input
-          type="checkbox"
-          checked
-          class="checkbox__input visually-hidden"
-          value="news"
-        />
-        <span class="checkbox__hashtag">#новости</span>
-      </label>
-      <label class="checkbox">
-        <input
-          type="checkbox"
-          checked
-          class="checkbox__input visually-hidden"
-          value="tech"
-        />
-        <span class="checkbox__hashtag">#технологии</span>
-      </label>
-      <label class="checkbox">
-        <input
-          type="checkbox"
-          checked
-          class="checkbox__input visually-hidden"
-          value="science"
-        />
-        <span class="checkbox__hashtag">#наука</span>
-      </label>
-    </form>
+    <div class="widget">
+      <div class="controller">
+        <h2 class="title">Настройки кисти</h2>
+        <form class="settings">
+          <fieldset>
+            <label class="brush-size">
+              <input
+                class="visually-hidden"
+                type="radio"
+                name="size"
+                value="10"
+                checked
+              />
+              <span class="size-button">XS</span>
+            </label>
+            <label class="brush-size">
+              <input
+                class="visually-hidden"
+                type="radio"
+                name="size"
+                value="20"
+                checked
+              />
+              <span class="size-button">S</span>
+            </label>
+            <label class="brush-size">
+              <input
+                class="visually-hidden"
+                type="radio"
+                name="size"
+                value="30"
+              />
+              <span class="size-button">M</span>
+            </label>
+            <label class="brush-size">
+              <input
+                class="visually-hidden"
+                type="radio"
+                name="size"
+                value="40"
+              />
+              <span class="size-button">L</span>
+            </label>
+            <label class="brush-size">
+              <input
+                class="visually-hidden"
+                type="radio"
+                name="size"
+                value="50"
+              />
+              <span class="size-button">XL</span>
+            </label>
+          </fieldset>
+          <fieldset>
+            <label class="color">
+              <input class="visually-hidden" type="color" value="#ff0000" />
+              <span class="color-button">Цвет</span>
+            </label>
+          </fieldset>
+          <button type="button" class="clear">Очистить&nbsp;холст</button>
+        </form>
+      </div>
+      <canvas class="canvas"></canvas>
+    </div>
+
+    <script src="./vendor/p5.min.js"></script>
+    <script src="./scripts/script.js"></script>
   </body>
 </html>

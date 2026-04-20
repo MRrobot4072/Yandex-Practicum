@@ -5,132 +5,110 @@
 }
 
 body {
+  display: flex;
+  flex-direction: column;
   min-block-size: 100dvb;
   margin: 0;
-  padding: 2em;
   font-family: 'Open Sans', sans-serif;
   font-size: 18px;
-  background-color: #ffc802;
+  background-color: #fff;
 }
 
 h1,
 h2,
 h3,
-p {
+h4,
+h5,
+h6,
+p,
+ul {
   margin: 0;
-}
-
-img {
-  inline-size: 100%;
 }
 
 ul {
-  margin: 0;
   padding: 0;
   list-style: none;
 }
 
-.content {
+a {
+  color: inherit;
+}
+
+.header {
   display: grid;
-  grid-template-columns: 1fr 2fr;
-  gap: 1em;
+  place-items: center;
+  padding: 5px 20px;
+  color: #fff;
+  background-color: #5f0dee;
 }
 
-.friends ul {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  gap: 1em;
-  container-type: inline-size;
+.header__logo {
+  font-size: 54px;
+  line-height: 1;
 }
 
-.recommendations {
-  grid-column: 1 / -1;
-  overflow: hidden;
+.profile {
+  flex-grow: 1;
+  padding: 20px;
 }
 
-.recommendations ul {
-  display: flex;
-  gap: 1em;
-  padding: 0.5em;
-  overflow-x: scroll;
-  container-type: inline-size;
+.profile__picture {
+  display: block;
+  max-inline-size: 400px;
+  margin: 0 auto;
 }
 
-.title {
-  margin-block-end: 1em;
-  font-size: 2em;
+.profile__name {
+  padding: 20px 0;
+  font-size: 45px;
+  text-align: center;
   text-transform: uppercase;
 }
 
-.card {
-  min-inline-size: 350px;
-  border: 1px solid #000;
-  background-color: #fff;
-}
-
-@container (inline-size >= 400px) {
-  .card {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
-.card__image {
-  object-fit: cover;
-  object-position: center;
-  aspect-ratio: 1 / 1;
-}
-
-.card__description {
+.buttons-list {
   display: grid;
-  grid-template-rows: min-content min-content 1fr;
-  padding: 1em;
+  gap: 5px;
 }
 
-.card__title {
-  margin-block-end: 0.1em;
-  font-size: 1.5em;
-  text-transform: uppercase;
-}
-
-.button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  inline-size: fit-content;
-  block-size: fit-content;
+.buttons-list button {
+  display: block;
+  inline-size: 100%;
   border: 1px solid #000;
-  padding: 0.5em 1em;
+  padding: 10px 65px;
   color: #000;
   font-family: inherit;
-  font-weight: bold;
-  font-size: 1em;
-  text-decoration: none;
+  font-weight: 800;
+  font-size: inherit;
   text-transform: uppercase;
-  background-color: #6dc1fd;
+  background-color: #ffc802;
 }
 
-.button:hover {
+.buttons-list button:hover {
   box-shadow: inset 0 0 0 100px rgb(0 0 0 / 0.15);
   cursor: pointer;
 }
 
-.button:focus {
+.buttons-list button:focus {
   outline: 2px solid #000;
   outline-offset: 0;
 }
 
-.card__profile-link {
-  align-self: end;
-  margin-top: 1em;
+.profile__about-info {
+  padding: 40px 0;
 }
 
-@media (width <= 768px) {
-  .content {
-    grid-template-columns: 1fr;
-  }
+.profile__about-title {
+  margin-block-end: 0.5em;
+  font-size: 31px;
+  text-transform: uppercase;
+}
 
-  .recommendations {
-    grid-column: 1;
-  }
+.profile__paragraph:not(:last-child) {
+  margin-block-end: 1em;
+}
+
+.footer {
+  padding: 20px 40px;
+  color: #fff;
+  background-color: #5f0dee;
 }

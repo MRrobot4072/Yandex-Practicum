@@ -83,3 +83,17 @@ ul {
   display: flex;
   gap: 20px;
 }
+
+@media (width <= 600px) {
+  body {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 0;
+    color: #000;
+    background-color: #fff;
+  }
+
+  .cover-video {
+    display: none;
+  }
+}

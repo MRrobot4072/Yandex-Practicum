@@ -6,94 +6,21 @@
 
 body {
   display: grid;
-  grid-template-columns: 1fr min-content;
-  align-content: center;
-  gap: 40px;
+  align-items: center;
   min-block-size: 100dvb;
   margin: 0;
-  padding: 40px;
-  color: #fff;
+  padding: 2em;
   font-family: 'Open Sans', sans-serif;
   font-size: 18px;
-  background-color: #000;
-}
-
-a {
-  color: inherit;
-}
-
-h1,
-p {
-  margin: 0;
-}
-
-ul {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.title {
-  grid-column: 1 / -1;
-  max-inline-size: 800px;
-  font-size: 64px;
-  text-transform: uppercase;
-}
-
-.cover-video {
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  inline-size: 100%;
-  block-size: 100%;
-  object-fit: cover;
-  object-position: center;
-}
-
-.cover-image {
-  display: none;
-}
-
-.content {
-  grid-column: 1 / -1;
-  max-inline-size: 900px;
-}
-
-.button {
-  display: block;
-  inline-size: fit-content;
-  block-size: fit-content;
-  border: 2px solid currentColor;
-  padding: 0.5em 1em;
-  color: currentColor;
-  font-weight: bold;
-  font-size: inherit;
-  text-decoration: none;
-  text-transform: uppercase;
-  background-color: transparent;
-  cursor: pointer;
-}
-
-.button:hover {
-  color: #000;
   background-color: #fff;
+  background-image: url(https://code.s3.yandex.net/web-code/images/dotted.svg);
 }
 
-.social-links {
-  display: flex;
-  gap: 20px;
+h1 {
+  font-size: 50px;
+  text-transform: uppercase;
 }
 
-@media (width <= 600px) {
-  body {
-    grid-template-columns: 1fr;
-    gap: 20px;
-    padding: 0;
-    color: #000;
-    background-color: #fff;
-  }
-
-  .cover-video {
-    display: none;
-  }
+video {
+  inline-size: 100%;
 }

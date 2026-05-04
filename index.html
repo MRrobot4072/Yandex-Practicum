@@ -12,11 +12,18 @@
   </head>
   <body>
     <h1>На небесах только и говорят о море</h1>
-    <video
-      src="./video/horizontal.mov"
-      controls
-      playsinline
-      webkit-playsinline
-    ></video>
+    <video controls playsinline webkit-playsinline>
+      <source src="./video/horizontal.mov" type="video/mov" />
+      <source src="./video/horizontal.mp4" type="video/mp4" />
+      <source src="./video/horizontal.avi" type="video/avi" />
+      <source src="./video/horizontal.webm" type="video/webm" />
+      <p>
+        Ваш браузер не поддерживает видео. Вы можете скачать его в форматах
+        <a href="./video/horizontal.mov">MOV</a>,
+        <a href="./video/horizontal.mp4">MP4</a>,
+        <a href="./video/horizontal.avi">AVI</a>,
+        <a href="./video/horizontal.webm">WEBM</a>
+      </p>
+    </video>
   </body>
 </html>

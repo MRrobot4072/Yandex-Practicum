@@ -10,24 +10,38 @@ body {
   min-block-size: 100dvb;
   margin: 0;
   padding: 2em;
-  color: #ffc802;
   font-family: 'Open Sans', sans-serif;
   font-size: 18px;
-  background-color: #5f0dee;
+  background-color: #fff;
+  background-image: url(https://code.s3.yandex.net/web-code/images/dotted.svg);
 }
 
-h1 {
-  margin: 0;
-  color: transparent;
-  font-size: clamp(2.5rem, 0.5rem + 7vi, 6.25rem);
+@keyframes vibe {
+  from {
+    text-shadow: 0 0 0 #feafe8,
+               0 0 0 #ffc802
+  }
+  to {
+    text-shadow: 0 4px 0 #feafe8,
+              0 6px 0 #ffc802,
+  }
+}
+
+span {
+  display: grid;
+  place-items: center;
+  inline-size: fit-content;
+  border: 4px solid #ffc802;
+  border-radius: 50%;
+  padding: 40px;
+  font-family: sans-serif;
+  font-weight: bold;
+  font-size: 100px;
+  letter-spacing: 4px;
   text-transform: uppercase;
-  -webkit-hyphens: auto;
-  hyphens: auto;
-  text-wrap: balance;
-  -webkit-text-stroke: 2px #ffc802;
-}
-
-h1::selection {
-  color: #ffc802;
-  background-color: #6dc1fd;
+  background-color: #fff;
+  animation:
+    vibe 1s ease-in-out infinite alternate,
+    round 1s linear infinite;
+  aspect-ratio: 1 / 1;
 }

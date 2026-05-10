@@ -4,53 +4,129 @@
   box-sizing: border-box;
 }
 
+@keyframes move {
+  from {
+    /* начальное состояние background-position */
+  }
+
+  to {
+    /* конечное состояние background-position */
+  }
+}
+
 body {
+  inline-size: 100dvi;
+  block-size: 100dvb;
   margin: 0;
-  font-family: 'Open Sans', sans-serif;
-  font-size: 18px;
-  background-color: #fff;
-  background-image: url(https://code.s3.yandex.net/web-code/images/dotted.svg);
+  padding: 0;
+  overflow: hidden;
+  background-color: black;
 }
 
-.cover {
-  position: relative;
-  display: grid;
-  place-items: center;
-  padding: 5%;
-  text-transform: uppercase;
-  background-position: center;
-  background-size: cover;
-  aspect-ratio: 16 / 9;
-}
-
-.cover-image {
+.sun {
   position: absolute;
-  inset: 0;
-  z-index: -1;
+  z-index: 2;
   inline-size: 100%;
-  block-size: 100%;
-  object-fit: cover;
+  block-size: 50%;
+  opacity: 0.5;
+  background-image:
+    radial-gradient(circle at bottom, rgb(254 255 255 / 0.8) 5%, rgb(236 255 0) 10%, rgb(253 50 41) 25%, rgb(243 0 0) 40%, rgb(93 0 0) 100%),
+    radial-gradient(circle at bottom, rgb(242 248 247) 0%, rgb(249 249 28) 3%, rgb(247 214 46) 8%, rgb(248 200 95) 12%, rgb(201 165 132) 30%, rgb(115 130 133) 50%, rgb(46 97 122) 85%, rgb(24 75 106) 100%);
+  background-repeat: no-repeat;
+  inset-block-start: 0;
+  inset-inline-end: 0%;
 }
 
-.heading {
-  color: #fff;
-  font-family: sans-serif;
-  font-size: 4em;
-  hyphens: auto;
-  text-wrap: balance;
+.sky {
+  position: absolute;
+  z-index: 1;
+  inline-size: 100%;
+  block-size: 50%;
+  opacity: 0.52;
+  background-image: linear-gradient(to top, rgb(249 251 240) 10%, rgb(215 253 254) 20%, rgb(167 222 253) 40%, rgb(110 175 255) 100%);
+  inset-block-start: 0;
+  inset-inline-end: 0;
 }
 
-.content {
-  inline-size: 90%;
-  margin: 40px auto;
-  border: 1px solid #000;
-  padding: 2em;
-  background-color: #fff;
+.horizon {
+  position: absolute;
+  z-index: 1;
+  inline-size: 100%;
+  block-size: 50%;
+  opacity: 0.99;
+  background-image: linear-gradient(to top, rgb(212 87 43 / 0.9) 0%, rgb(246 149 52 / 0.8) 20%, rgb(24 75 106 / 0) 100%);
+  background-repeat: no-repeat;
+  inset-block-start: 0;
+  inset-inline-end: 0;
 }
 
-.content__title {
-  margin: 0;
-  font-size: 45px;
-  text-transform: uppercase;
-  hyphens: auto;
+.water {
+  position: absolute;
+  z-index: 2;
+  inline-size: 100%;
+  block-size: 50%;
+  overflow: hidden;
+  background-image: linear-gradient(to top, rgb(0 25 45) 0%, rgb(14 71 117) 35%, rgb(26 126 174) 70%, rgb(62 168 220) 100%);
+  background-repeat: no-repeat;
+  inset-block-end: 0;
+  inset-inline-end: 0;
+}
+
+.water-distance {
+  position: absolute;
+  z-index: 2;
+  inline-size: 100%;
+  block-size: 50%;
+  background-image: linear-gradient(to top, rgb(0 0 0 / 0) 10%, rgb(0 0 0 / 0.2) 44%, rgb(0 0 0 / 0.65) 95%, rgb(0 0 0 / 0.62) 100%);
+  background-repeat: no-repeat;
+  inset-block-end: 0;
+  inset-inline-end: 0;
+}
+
+.water-reflection-container {
+  position: absolute;
+  z-index: 2;
+  inline-size: 103%;
+  block-size: 50%;
+  overflow: hidden;
+  perspective: 30px;
+  perspective-origin: 50% -12%;
+  inset-block-start: 50%;
+  inset-inline-end: -3%;
+}
+
+.water-reflection-middle {
+  position: absolute;
+  z-index: 2;
+  inline-size: 200%;
+  block-size: 55%;
+  opacity: 0.7;
+  background-image: radial-gradient(ellipse at 50% 0, rgb(247 177 72) 3%, rgb(248 175 65) 6%, rgb(207 62 30 / 0.4) 35%, rgb(176 91 48 / 0.1) 45%, rgb(141 88 47 / 0) 60%, rgb(141 88 47 / 0) 100%);
+  background-repeat: no-repeat;
+  transform: rotateX(45deg);
+  inset-block-start: 0;
+  inset-inline-end: -50%;
+}
+
+.ripple {
+  position: absolute;
+  z-index: 2;
+  inline-size: 100%;
+  block-size: 50%;
+  opacity: 0.5;
+  background-image: repeating-linear-gradient(175deg, rgb(165 165 165 / 0.08) 43%, rgb(175 175 175 / 0.08) 45%, rgb(235 235 235 / 0.08) 49%, rgb(195 195 195 / 0.08) 50%, rgb(165 165 165 / 0.08) 54%);
+  inset-inline-end: 0%;
+  inset-block-end: 0;
+
+  /* вызов анимации */
+}
+
+.rays {
+  position: absolute;
+  z-index: 0;
+  inline-size: 100%;
+  block-size: 50%;
+  background-image: repeating-conic-gradient(from 0deg at 50% bottom, rgb(255 89 0 / 0) 20deg, rgb(255 89 0) 40deg, rgb(255 89 0 / 0) 60deg);
+  inset-block-start: 0;
+  inset-inline-end: 0;
 }
